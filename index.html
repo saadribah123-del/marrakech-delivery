@@ -1,400 +1,126 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Livraison Marrakech 24h/24h</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Livraison Marrakech | خدمة التوصيل بمراكش</title>
+    <link href="https://googleapis.com" rel="stylesheet">
+    <link rel="stylesheet" href="https://cloudflare.com">
+    <style>
+        :root {
+            --primary-color: #E25822; 
+            --secondary-color: #25D366; 
+            --dark-color: #111111; 
+            --light-color: #f7f7f7;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Tajawal', sans-serif; }
+        body { background-color: var(--light-color); color: var(--dark-color); line-height: 1.6; padding-bottom: 80px; }
+        
+        header { background: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.1); padding: 10px 20px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 100; }
+        .logo-container { display: flex; align-items: center; gap: 10px; }
+        .logo-img { height: 50px; width: auto; border-radius: 5px; }
+        .logo-text { font-size: 18px; font-weight: bold; color: var(--primary-color); }
+        .cta-top { background: var(--secondary-color); color: white; padding: 8px 15px; border-radius: 20px; text-decoration: none; font-weight: bold; font-size: 14px; }
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+        /* تعديل تصميم الواجهة لتستقبل الصورة بدقة */
+        .hero { background: var(--dark-color); text-align: center; color: white; padding: 50px 20px; display: flex; flex-direction: column; align-items: center; }
+        .hero-logo { max-width: 290px; width: 100%; height: auto; margin-bottom: 20px; border-radius: 15px; box-shadow: 0 6px 20px rgba(0,0,0,0.6); display: block; }
+        .hero h1 { font-size: 28px; margin-bottom: 10px; color: #fff; }
+        .hero p { font-size: 16px; max-width: 600px; color: #ccc; }
 
-<style>
-:root{
---orange:#ff7a00;
---dark:#111111;
---white:#ffffff;
---gray:#f5f5f5;
-}
+        .coverage { padding: 30px 20px; text-align: center; background: white; margin: 20px auto; max-width: 800px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+        .coverage h2 { color: var(--primary-color); margin-bottom: 15px; font-size: 22px; }
+        .zones { font-size: 16px; color: #555; word-spacing: 3px; line-height: 2; }
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial,sans-serif;
-}
+        .order-section { background: white; max-width: 600px; margin: 20px auto; padding: 25px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        .order-section h2 { text-align: center; margin-bottom: 20px; font-size: 24px; color: var(--dark-color); }
+        .form-group { margin-bottom: 15px; }
+        .form-group label { display: block; margin-bottom: 5px; font-weight: bold; }
+        .form-group input, .form-group textarea { width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 5px; font-size: 16px; }
+        .submit-btn { width: 100%; background: var(--secondary-color); color: white; border: none; padding: 14px; font-size: 18px; font-weight: bold; border-radius: 5px; cursor: pointer; }
 
-body{
-background:var(--gray);
-color:#222;
-}
-
-header{
-background:#000;
-padding:12px 20px;
-display:flex;
-justify-content:space-between;
-align-items:center;
-position:sticky;
-top:0;
-z-index:1000;
-box-shadow:0 2px 10px rgba(0,0,0,.3);
-}
-
-.logo{
-display:flex;
-align-items:center;
-gap:10px;
-color:white;
-font-weight:bold;
-}
-
-.logo img{
-height:60px;
-width:auto;
-border-radius:10px;
-}
-
-.phone-btn{
-background:var(--orange);
-color:white;
-padding:10px 18px;
-border-radius:30px;
-text-decoration:none;
-font-weight:bold;
-}
-
-.hero{
-min-height:70vh;
-background:
-linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.65)),
-url('https://images.unsplash.com/photo-1519003722824-194d4455a60c?auto=format&fit=crop&w=1400&q=80');
-background-size:cover;
-background-position:center;
-display:flex;
-align-items:center;
-justify-content:center;
-text-align:center;
-padding:30px;
-color:white;
-}
-
-.hero-content{
-max-width:800px;
-}
-
-.hero h1{
-font-size:42px;
-margin-bottom:15px;
-}
-
-.hero p{
-font-size:18px;
-margin-bottom:25px;
-line-height:1.8;
-}
-
-.hero-buttons{
-display:flex;
-justify-content:center;
-gap:15px;
-flex-wrap:wrap;
-}
-
-.btn{
-padding:14px 25px;
-border-radius:30px;
-text-decoration:none;
-font-weight:bold;
-}
-
-.btn-whatsapp{
-background:#25D366;
-color:white;
-}
-
-.btn-call{
-background:var(--orange);
-color:white;
-}
-
-.section{
-padding:70px 20px;
-}
-
-.title{
-text-align:center;
-margin-bottom:40px;
-font-size:32px;
-}
-
-.stats{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-gap:20px;
-max-width:1000px;
-margin:auto;
-}
-
-.stat{
-background:white;
-padding:25px;
-border-radius:20px;
-text-align:center;
-box-shadow:0 5px 20px rgba(0,0,0,.08);
-}
-
-.stat h2{
-color:var(--orange);
-font-size:34px;
-margin-bottom:10px;
-}
-
-.services{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
-max-width:1100px;
-margin:auto;
-}
-
-.card{
-background:white;
-padding:30px;
-border-radius:20px;
-text-align:center;
-box-shadow:0 5px 20px rgba(0,0,0,.08);
-}
-
-.card i{
-font-size:40px;
-color:var(--orange);
-margin-bottom:15px;
-}
-
-.why{
-background:#111;
-color:white;
-}
-
-.why-list{
-max-width:900px;
-margin:auto;
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
-}
-
-.why-box{
-background:#1b1b1b;
-padding:25px;
-border-radius:15px;
-}
-
-.coverage{
-text-align:center;
-font-size:18px;
-line-height:2;
-}
-
-footer{
-background:black;
-color:white;
-text-align:center;
-padding:30px 20px;
-}
-
-.whatsapp-float{
-position:fixed;
-bottom:20px;
-right:20px;
-width:65px;
-height:65px;
-border-radius:50%;
-background:#25D366;
-color:white;
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:30px;
-text-decoration:none;
-box-shadow:0 4px 15px rgba(0,0,0,.3);
-}
-
-.call-float{
-position:fixed;
-bottom:20px;
-left:20px;
-width:65px;
-height:65px;
-border-radius:50%;
-background:#007bff;
-color:white;
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:28px;
-text-decoration:none;
-box-shadow:0 4px 15px rgba(0,0,0,.3);
-}
-
-@media(max-width:768px){
-.hero h1{
-font-size:30px;
-}
-}
-</style>
+        footer { text-align: center; padding: 30px 20px; background: var(--dark-color); color: white; font-size: 14px; margin-top: 40px; }
+        footer p { margin-bottom: 5px; }
+        
+        .floating-buttons { position: fixed; bottom: 20px; left: 20px; display: flex; flex-direction: column; gap: 10px; z-index: 1000; }
+        .float-btn { width: 60px; height: 60px; border-radius: 50%; display: flex; justify-content: center; align-items: center; color: white; font-size: 28px; box-shadow: 0 4px 10px rgba(0,0,0,0.3); text-decoration: none; }
+        .float-wa { background-color: var(--secondary-color); }
+        .float-phone { background-color: #007bff; }
+    </style>
 </head>
-
 <body>
 
-<header>
+    <header>
+        <div class="logo-container">
+            <!-- مسار مرن للصورة لضمان التحميل السريع -->
+            <img src="logo.jpg" class="logo-img" alt="Logo" onerror="this.src='logo.png'; this.onerror=null;">
+            <div class="logo-text">🛵 Livraison Marrakech</div>
+        </div>
+        <a href="https://wa.me" class="cta-top">واتساب مباشر</a>
+    </header>
 
-<div class="logo">
-<img src="logo.png" alt="Logo">
-<span>Livraison Marrakech 24h/24h</span>
-</div>
+    <section class="hero">
+        <!-- مسار الشعار الرئيسي مع كود احتياطي في حال كانت الصيغة png -->
+        <img src="logo.jpg" class="hero-logo" alt="Livraison Marrakech Logo" id="mainLogo" onerror="this.src='logo.png'; this.onerror=null;">
+        <h1>أفضل خدمة توصيل في مراكش 24h/24h</h1>
+        <p>توصيل سريع، آمن وموثوق لجميع الطلبات والسلع داخل وخارج مراكش.</p>
+    </section>
 
-<a href="tel:+212602751255" class="phone-btn">
-📞 Appeler
-</a>
+    <section class="coverage">
+        <h2>Zones Couvertes | المناطق المشمولة</h2>
+        <p class="zones">Guéliz - Médina - Mhamid - Daoudiate - Sidi Youssef - Targa - المسيرة - المحاميد - الداوديات - المدينة - سيدي يوسف - تاركة - جليز</p>
+    </section>
 
-</header>
+    <section class="order-section">
+        <h2>اطلب التوصيل الآن 📝</h2>
+        <form id="deliveryForm">
+            <div class="form-group">
+                <label>الاسم الكامل:</label>
+                <input type="text" id="name" required placeholder="مثال: أحمد">
+            </div>
+            <div class="form-group">
+                <label>مكان تسلم الطلب (الانطلاق):</label>
+                <input type="text" id="pickup" required placeholder="من أين؟">
+            </div>
+            <div class="form-group">
+                <label>مكان التوصيل (الوجهة):</label>
+                <input type="text" id="dropoff" required placeholder="إلى أين؟">
+            </div>
+            <div class="form-group">
+                <label>تفاصيل الطرد أو الطلب:</label>
+                <textarea id="details" rows="3" required placeholder="ماذا سنقوم بتوصيله؟"></textarea>
+            </div>
+            <button type="submit" class="submit-btn">إرسال الطلب عبر الواتساب 🟢</button>
+        </form>
+    </section>
 
-<section class="hero">
+    <footer>
+        <p><i class="fas fa-phone"></i> +212 602 751 255</p>
+        <p>Livraison Marrakech 24h/24h &copy; 2026</p>
+    </footer>
 
-<div class="hero-content">
+    <div class="floating-buttons">
+        <a href="https://wa.me" class="float-btn float-wa"><i class="fab fa-whatsapp"></i></a>
+        <a href="tel:+212602751255" class="float-btn float-phone"><i class="fas fa-phone"></i></a>
+    </div>
 
-<h1>🚀 Livraison Marrakech 24h/24h</h1>
+    <script>
+        document.getElementById('deliveryForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const pickup = document.getElementById('pickup').value;
+            const dropoff = document.getElementById('dropoff').value;
+            const details = document.getElementById('details').value;
 
-<p>
-خدمة توصيل سريعة وموثوقة داخل جميع أحياء مراكش
-<br>
-Service de livraison rapide et sécurisée à Marrakech 24h/24
-</p>
+            const message = `مرحباً، أريد طلب خدمة توصيل:%0A%0A` +
+                            `👤 *الاسم:* ${name}%0A` +
+                            `📍 *من:* ${pickup}%0A` +
+                            `🏁 *إلى:* ${dropoff}%0A` +
+                            `📦 *الحمولة:* ${details}`;
 
-<div class="hero-buttons">
-
-<a href="https://wa.me/212602751255" class="btn btn-whatsapp">
-WhatsApp
-</a>
-
-<a href="tel:+212602751255" class="btn btn-call">
-Appeler
-</a>
-
-</div>
-
-</div>
-
-</section>
-
-<section class="section">
-
-<h2 class="title">Nos chiffres | أرقامنا</h2>
-
-<div class="stats">
-
-<div class="stat">
-<h2>24/24</h2>
-<p>Service disponible</p>
-</div>
-
-<div class="stat">
-<h2>15 min</h2>
-<p>Livraison rapide</p>
-</div>
-
-<div class="stat">
-<h2>100%</h2>
-<p>Satisfaction clients</p>
-</div>
-
-</div>
-
-</section>
-
-<section class="section">
-
-<h2 class="title">Services | خدماتنا</h2>
-
-<div class="services">
-
-<div class="card">
-<i class="fas fa-box"></i>
-<h3>Livraison Colis</h3>
-<p>توصيل الطرود بسرعة وأمان</p>
-</div>
-
-<div class="card">
-<i class="fas fa-file-alt"></i>
-<h3>Documents</h3>
-<p>توصيل الوثائق والمستندات</p>
-</div>
-
-<div class="card">
-<i class="fas fa-shopping-basket"></i>
-<h3>Courses</h3>
-<p>قضاء الأغراض والطلبات</p>
-</div>
-
-<div class="card">
-<i class="fas fa-motorcycle"></i>
-<h3>Express</h3>
-<p>توصيل مستعجل داخل مراكش</p>
-</div>
-
-</div>
-
-</section>
-
-<section class="section why">
-
-<h2 class="title">Pourquoi nous ?</h2>
-
-<div class="why-list">
-
-<div class="why-box">⚡ سرعة في التوصيل</div>
-
-<div class="why-box">🔒 أمان وموثوقية</div>
-
-<div class="why-box">📞 خدمة متواصلة 24/24</div>
-
-</div>
-
-</section>
-
-<section class="section">
-
-<h2 class="title">Zones couvertes</h2>
-
-<div class="coverage">
-جليز • المدينة • المحاميد • الداوديات • سيدي غانم • تاركة
-<br>
-Guéliz • Médina • Mhamid • Daoudiate • Sidi Ghanem • Targa
-</div>
-
-</section>
-
-<footer>
-
-<h3>Livraison Marrakech 24h/24h</h3>
-
-<br>
-
-📞 +212 602 751 255
-
-<br><br>
-
-Rapide • Fiable • Sécurisé
-
-</footer>
-
-<a href="https://wa.me/212602751255" class="whatsapp-float">
-<i class="fab fa-whatsapp"></i>
-</a>
-
-<a href="tel:+212602751255" class="call-float">
-<i class="fas fa-phone"></i>
-</a>
-
+            window.open(`https://wa.me?text=${message}`, '_blank');
+        });
+    </script>
 </body>
 </html>
+
