@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +8,13 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 <style>
+:root{
+--orange:#ff7a00;
+--dark:#111111;
+--white:#ffffff;
+--gray:#f5f5f5;
+}
+
 *{
 margin:0;
 padding:0;
@@ -16,108 +23,135 @@ font-family:Arial,sans-serif;
 }
 
 body{
-background:#f5f5f5;
+background:var(--gray);
 color:#222;
 }
 
 header{
-background:#111;
-padding:15px 25px;
+background:#000;
+padding:12px 20px;
 display:flex;
 justify-content:space-between;
 align-items:center;
 position:sticky;
 top:0;
 z-index:1000;
+box-shadow:0 2px 10px rgba(0,0,0,.3);
 }
 
 .logo{
-color:#ff7a00;
-font-size:28px;
+display:flex;
+align-items:center;
+gap:10px;
+color:white;
 font-weight:bold;
 }
 
+.logo img{
+height:60px;
+width:auto;
+border-radius:10px;
+}
+
 .phone-btn{
-background:#ff7a00;
+background:var(--orange);
 color:white;
-padding:10px 20px;
+padding:10px 18px;
 border-radius:30px;
 text-decoration:none;
 font-weight:bold;
 }
 
 .hero{
-height:85vh;
-background:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),
-url('https://images.unsplash.com/photo-1519003722824-194d4455a60c');
+min-height:70vh;
+background:
+linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.65)),
+url('https://images.unsplash.com/photo-1519003722824-194d4455a60c?auto=format&fit=crop&w=1400&q=80');
 background-size:cover;
 background-position:center;
 display:flex;
-flex-direction:column;
-justify-content:center;
 align-items:center;
+justify-content:center;
 text-align:center;
-padding:20px;
+padding:30px;
 color:white;
 }
 
+.hero-content{
+max-width:800px;
+}
+
 .hero h1{
-font-size:48px;
+font-size:42px;
 margin-bottom:15px;
 }
 
 .hero p{
-font-size:20px;
-max-width:700px;
+font-size:18px;
 margin-bottom:25px;
+line-height:1.8;
+}
+
+.hero-buttons{
+display:flex;
+justify-content:center;
+gap:15px;
+flex-wrap:wrap;
 }
 
 .btn{
-background:#ff7a00;
-color:white;
-padding:14px 30px;
+padding:14px 25px;
 border-radius:30px;
 text-decoration:none;
-font-size:18px;
 font-weight:bold;
 }
 
+.btn-whatsapp{
+background:#25D366;
+color:white;
+}
+
+.btn-call{
+background:var(--orange);
+color:white;
+}
+
+.section{
+padding:70px 20px;
+}
+
+.title{
+text-align:center;
+margin-bottom:40px;
+font-size:32px;
+}
+
 .stats{
-display:flex;
-justify-content:center;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
 gap:20px;
-flex-wrap:wrap;
-padding:50px 20px;
-background:white;
+max-width:1000px;
+margin:auto;
 }
 
 .stat{
-background:#fafafa;
+background:white;
 padding:25px;
-width:200px;
-text-align:center;
 border-radius:20px;
-box-shadow:0 5px 20px rgba(0,0,0,.1);
+text-align:center;
+box-shadow:0 5px 20px rgba(0,0,0,.08);
 }
 
 .stat h2{
-color:#ff7a00;
-font-size:35px;
+color:var(--orange);
+font-size:34px;
+margin-bottom:10px;
 }
 
 .services{
-padding:60px 20px;
-text-align:center;
-}
-
-.services h2{
-margin-bottom:40px;
-}
-
-.grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:25px;
+gap:20px;
 max-width:1100px;
 margin:auto;
 }
@@ -126,76 +160,86 @@ margin:auto;
 background:white;
 padding:30px;
 border-radius:20px;
-box-shadow:0 5px 20px rgba(0,0,0,.1);
+text-align:center;
+box-shadow:0 5px 20px rgba(0,0,0,.08);
 }
 
 .card i{
 font-size:40px;
-color:#ff7a00;
+color:var(--orange);
 margin-bottom:15px;
 }
 
-.testimonials{
-padding:60px 20px;
+.why{
 background:#111;
 color:white;
-text-align:center;
 }
 
-.testimonial{
-max-width:700px;
-margin:20px auto;
+.why-list{
+max-width:900px;
+margin:auto;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+.why-box{
+background:#1b1b1b;
+padding:25px;
+border-radius:15px;
 }
 
 .coverage{
-padding:50px 20px;
 text-align:center;
-background:white;
-}
-
-.coverage p{
 font-size:18px;
+line-height:2;
 }
 
 footer{
-background:#111;
+background:black;
 color:white;
 text-align:center;
-padding:25px;
+padding:30px 20px;
 }
 
-.whatsapp{
+.whatsapp-float{
 position:fixed;
 bottom:20px;
 right:20px;
-background:#25d366;
 width:65px;
 height:65px;
 border-radius:50%;
+background:#25D366;
+color:white;
 display:flex;
 align-items:center;
 justify-content:center;
-font-size:32px;
-color:white;
+font-size:30px;
 text-decoration:none;
 box-shadow:0 4px 15px rgba(0,0,0,.3);
 }
 
-.call{
+.call-float{
 position:fixed;
 bottom:20px;
 left:20px;
-background:#007bff;
 width:65px;
 height:65px;
 border-radius:50%;
+background:#007bff;
+color:white;
 display:flex;
 align-items:center;
 justify-content:center;
 font-size:28px;
-color:white;
 text-decoration:none;
 box-shadow:0 4px 15px rgba(0,0,0,.3);
+}
+
+@media(max-width:768px){
+.hero h1{
+font-size:30px;
+}
 }
 </style>
 </head>
@@ -203,30 +247,52 @@ box-shadow:0 4px 15px rgba(0,0,0,.3);
 <body>
 
 <header>
+
 <div class="logo">
-🛵 Livraison Marrakech 24h/24h
+<img src="logo.png" alt="Logo">
+<span>Livraison Marrakech 24h/24h</span>
 </div>
 
 <a href="tel:+212602751255" class="phone-btn">
 📞 Appeler
 </a>
+
 </header>
 
 <section class="hero">
-<h1>Livraison Marrakech 24h/24h</h1>
+
+<div class="hero-content">
+
+<h1>🚀 Livraison Marrakech 24h/24h</h1>
 
 <p>
 خدمة توصيل سريعة وموثوقة داخل جميع أحياء مراكش
 <br>
-Service de livraison rapide à Marrakech 24h/24
+Service de livraison rapide et sécurisée à Marrakech 24h/24
 </p>
 
-<a href="https://wa.me/212602751255" class="btn">
+<div class="hero-buttons">
+
+<a href="https://wa.me/212602751255" class="btn btn-whatsapp">
 WhatsApp
 </a>
+
+<a href="tel:+212602751255" class="btn btn-call">
+Appeler
+</a>
+
+</div>
+
+</div>
+
 </section>
 
-<section class="stats">
+<section class="section">
+
+<h2 class="title">Nos chiffres | أرقامنا</h2>
+
+<div class="stats">
+
 <div class="stat">
 <h2>24/24</h2>
 <p>Service disponible</p>
@@ -239,14 +305,18 @@ WhatsApp
 
 <div class="stat">
 <h2>100%</h2>
-<p>Clients satisfaits</p>
+<p>Satisfaction clients</p>
 </div>
+
+</div>
+
 </section>
 
-<section class="services">
-<h2>Nos Services | خدماتنا</h2>
+<section class="section">
 
-<div class="grid">
+<h2 class="title">Services | خدماتنا</h2>
+
+<div class="services">
 
 <div class="card">
 <i class="fas fa-box"></i>
@@ -255,7 +325,7 @@ WhatsApp
 </div>
 
 <div class="card">
-<i class="fas fa-file"></i>
+<i class="fas fa-file-alt"></i>
 <h3>Documents</h3>
 <p>توصيل الوثائق والمستندات</p>
 </div>
@@ -273,47 +343,58 @@ WhatsApp
 </div>
 
 </div>
+
 </section>
 
-<section class="testimonials">
-<h2>Avis Clients | آراء العملاء</h2>
+<section class="section why">
 
-<div class="testimonial">
-⭐⭐⭐⭐⭐
-<br>
-Service rapide et professionnel.
+<h2 class="title">Pourquoi nous ?</h2>
+
+<div class="why-list">
+
+<div class="why-box">⚡ سرعة في التوصيل</div>
+
+<div class="why-box">🔒 أمان وموثوقية</div>
+
+<div class="why-box">📞 خدمة متواصلة 24/24</div>
+
 </div>
 
-<div class="testimonial">
-⭐⭐⭐⭐⭐
-<br>
-أفضل خدمة توصيل في مراكش.
-</div>
 </section>
 
-<section class="coverage">
-<h2>Zones couvertes</h2>
+<section class="section">
 
-<p>
-Guéliz - Médina - Mhamid - Daoudiate - Sidi Ghanem - Targa
+<h2 class="title">Zones couvertes</h2>
+
+<div class="coverage">
+جليز • المدينة • المحاميد • الداوديات • سيدي غانم • تاركة
 <br>
-جليز - المدينة - المحاميد - الداوديات - سيدي غانم - تاركة
-</p>
+Guéliz • Médina • Mhamid • Daoudiate • Sidi Ghanem • Targa
+</div>
+
 </section>
 
 <footer>
+
+<h3>Livraison Marrakech 24h/24h</h3>
+
+<br>
+
 📞 +212 602 751 255
+
 <br><br>
-Livraison Marrakech 24h/24h © 2026
+
+Rapide • Fiable • Sécurisé
+
 </footer>
 
-<a href="https://wa.me/212602751255" class="whatsapp">
+<a href="https://wa.me/212602751255" class="whatsapp-float">
 <i class="fab fa-whatsapp"></i>
 </a>
 
-<a href="tel:+212602751255" class="call">
+<a href="tel:+212602751255" class="call-float">
 <i class="fas fa-phone"></i>
 </a>
 
 </body>
-    </html>
+</html>
