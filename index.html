@@ -1,129 +1,30 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Marrakech Delivery | توصيل سريع وموثوق</title>
-    <!-- استدعاء خط Cairo الاحترافي من جوجل -->
-    <link rel="preconnect" href="https://googleapis.com">
-    <link rel="preconnect" href="https://gstatic.com" crossorigin>
-    <link href="https://googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <!-- استدعاء مكتبة Tailwind CSS للتصميم العصري -->
-    <script src="https://jsdelivr.net"></script>
-    <!-- استدعاء أيقونات FontAwesome -->
-    <link rel="stylesheet" href="https://cloudflare.com">
-    <style>
-        body {
-            font-family: 'Cairo', sans-serif;
-        }
-    </style>
-</head>
-<body class="bg-slate-50 text-slate-800 antialiased selection:bg-amber-500 selection:text-white">
-
-    <!-- القائمة العلوية (Navbar) -->
-    <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-100 shadow-xs px-4 py-3 flex items-center justify-between">
-        <div class="flex items-center gap-2">
-            <!-- الشعار وصورة logo.png التي قمت برفعها سابقا -->
-            <img src="logo.png" alt="Marrakech Delivery Logo" class="h-9 w-auto object-contain fallback-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-            <span class="text-xl font-bold tracking-tight text-amber-500 hidden" style="display: none;">Marrakech <span class="text-slate-900">Delivery</span></span>
-        </div>
-        <button class="bg-slate-900 text-white px-4 py-2 rounded-full font-semibold text-sm hover:bg-slate-800 transition shadow-md shadow-slate-900/10">
-            اطلب الآن
-        </button>
-    </nav>
-
-    <!-- القسم الرئيسي (Hero Section) -->
-    <header class="relative px-4 py-12 text-center max-w-2xl mx-auto">
-        <div class="inline-flex items-center gap-1.5 bg-amber-500/10 text-amber-600 px-3 py-1 rounded-full text-xs font-semibold mb-4 border border-amber-500/20">
-            <i class="fa-solid fa-motorcycle text-xs"></i> خدمة التوصيل الأولى في مراكش
-        </div>
-        <h1 class="text-3xl font-extrabold leading-tight text-slate-900 sm:text-4xl">
-            كل ما تحتاجه في مراكش، <br>
-            <span class="text-amber-500 relative inline-block">يصلك في دقائق</span>
-        </h1>
-        <p class="mt-4 text-slate-500 text-base max-w-md mx-auto leading-relaxed">
-            من مطاعمك المفضلة، المتاجر، والصيدليات مباشرة إلى باب منزلك بسرعة وأمان.
-        </p>
-    </header>
-
-    <!-- الخدمات الأساسية (مستوحى من واجهة تطبيقات Glovo و InDrive) -->
-    <main class="px-4 pb-24 max-w-xl mx-auto">
-        <h2 class="text-sm font-bold uppercase tracking-wider text-slate-400 mb-4 px-1">ماذا تريد أن نرسل لك؟</h2>
-        
-        <div class="grid grid-cols-2 gap-4">
-            <!-- الخدمة 1 -->
-            <div class="bg-white p-5 rounded-3xl border border-slate-100 shadow-xs hover:shadow-md transition duration-300 cursor-pointer flex flex-col justify-between h-40 group relative overflow-hidden">
-                <div class="bg-amber-500/10 w-12 h-12 rounded-2xl flex items-center justify-center text-amber-500 text-xl group-hover:scale-110 transition duration-300">
-                    <i class="fa-solid fa-utensils"></i>
-                </div>
-                <div>
-                    <h3 class="font-bold text-slate-900 text-base mb-1">المطاعم</h3>
-                    <p class="text-xs text-slate-400">أشهى المأكولات والمطابخ</p>
-                </div>
-            </div>
-
-            <!-- الخدمة 2 -->
-            <div class="bg-white p-5 rounded-3xl border border-slate-100 shadow-xs hover:shadow-md transition duration-300 cursor-pointer flex flex-col justify-between h-40 group relative overflow-hidden">
-                <div class="bg-emerald-500/10 w-12 h-12 rounded-2xl flex items-center justify-center text-emerald-500 text-xl group-hover:scale-110 transition duration-300">
-                    <i class="fa-solid fa-basket-shopping"></i>
-                </div>
-                <div>
-                    <h3 class="font-bold text-slate-900 text-base mb-1">السوبرماركت</h3>
-                    <p class="text-xs text-slate-400">مقاضي المنزل اليومية</p>
-                </div>
-            </div>
-
-            <!-- الخدمة 3 -->
-            <div class="bg-white p-5 rounded-3xl border border-slate-100 shadow-xs hover:shadow-md transition duration-300 cursor-pointer flex flex-col justify-between h-40 group relative overflow-hidden">
-                <div class="bg-rose-500/10 w-12 h-12 rounded-2xl flex items-center justify-center text-rose-500 text-xl group-hover:scale-110 transition duration-300">
-                    <i class="fa-solid fa-prescription-bottle-medical"></i>
-                </div>
-                <div>
-                    <h3 class="font-bold text-slate-900 text-base mb-1">الصيدلية</h3>
-                    <p class="text-xs text-slate-400">الأدوية والمستلزمات الطبية</p>
-                </div>
-            </div>
-
-            <!-- الخدمة 4 (ميزة شبيهة بـ InDrive لتوصيل الطرود) -->
-            <div class="bg-white p-5 rounded-3xl border border-slate-100 shadow-xs hover:shadow-md transition duration-300 cursor-pointer flex flex-col justify-between h-40 group relative overflow-hidden">
-                <div class="bg-indigo-500/10 w-12 h-12 rounded-2xl flex items-center justify-center text-indigo-500 text-xl group-hover:scale-110 transition duration-300">
-                    <i class="fa-solid fa-box-open"></i>
-                </div>
-                <div>
-                    <h3 class="font-bold text-slate-900 text-base mb-1">إرسال طرد</h3>
-                    <p class="text-xs text-slate-400">توصيل أي غرض لأي مكان</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- قسم التتبع السريع أو طلب المساعدة -->
-        <div class="mt-8 bg-slate-900 text-white p-6 rounded-3xl flex items-center justify-between relative overflow-hidden shadow-lg shadow-slate-900/20">
-            <div class="z-10">
-                <h3 class="font-bold text-lg mb-1">تبي تطلب كابتن خاص؟</h3>
-                <p class="text-xs text-slate-300 max-w-[200px]">حدد سعرك وتواصل مع أقرب سائق فوراً</p>
-            </div>
-            <button class="bg-amber-500 text-slate-950 px-4 py-2.5 rounded-2xl font-bold text-xs hover:bg-amber-400 transition whitespace-nowrap z-10">
-                اطلب كابتن <i class="fa-solid fa-chevron-left mr-1 text-[10px]"></i>
-            </button>
-            <i class="fa-solid fa-map-location-dot absolute -left-6 -bottom-6 text-8xl text-white/5 pointer-events-none"></i>
-        </div>
-    </main>
-
-    <!-- شريط التنقل السفلي المخصص للهواتف (Bottom Navigation Bar) -->
-    <div class="fixed bottom-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-t border-slate-100 shadow-xl px-6 py-2 flex justify-around items-center max-w-xl mx-auto rounded-t-3xl">
-        <button class="flex flex-col items-center gap-1 text-amber-500">
-            <i class="fa-solid fa-house-chimney text-lg"></i>
-            <span class="text-[10px] font-bold">الرئيسية</span>
-        </button>
-        <button class="flex flex-col items-center gap-1 text-slate-400 hover:text-slate-600 transition">
-            <i class="fa-solid fa-receipt text-lg"></i>
-            <span class="text-[10px] font-semibold">طلباتي</span>
-        </button>
-        <button class="flex flex-col items-center gap-1 text-slate-400 hover:text-slate-600 transition">
-            <i class="fa-solid fa-user text-lg"></i>
-            <span class="text-[10px] font-semibold">الحساب</span>
-        </button>
-    </div>
-
-</body>
-</html>
+// app/Models/Order.php
+class Order extends Model {
+    protected $fillable = ['user_id', 'delivery_id', 'type', 'status'];
+    public function user() { return $this->belongsTo(User::class); }
+    public function delivery() { return $this->belongsTo(Delivery::class); }
+    public function trackings() { return $this->hasMany(Tracking::class); }
+}// app/Http/Controllers/OrderController.php
+public function store(Request $request) {
+    $validated = $request->validate([
+        'type' => 'required|in:parcel,medicine,food',
+        'pickup_address' => 'required|string',
+        'delivery_address' => 'required|string',
+    ]);
+    $order = Order::create([
+        'user_id' => auth()->id(),
+        'type' => $validated['type'],
+        'pickup_address' => $validated['pickup_address'],
+        'delivery_address' => $validated['delivery_address'],
+        'status' => 'pending'
+    ]);
+    // إشعار للمندوبين (Job/Event)
+    return response()->json($order, 201);
+}// socket.js (Node.js)
+io.on('connection', (socket) => {
+    socket.on('driver-location-update', (data) => {
+        // تحديث موقع المندوب في قاعدة البيانات
+        // إرسال الموقع للعميل
+        io.to(`order-${data.orderId}`).emit('driver-location', data.location);
+    });
+});
